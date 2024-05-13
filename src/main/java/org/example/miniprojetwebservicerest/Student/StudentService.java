@@ -22,8 +22,8 @@ public class StudentService {
         return studentRepository.findById(id).orElse(null);
     }
 
-     public void updateStudent(Student student) {
-         Student existingStudent = studentRepository.findById(student.getId()).orElse(null);
+     public void updateStudent(long id,Student student) {
+         Student existingStudent = studentRepository.findById(id).orElse(null);
          if (existingStudent != null) {
              existingStudent.setName(student.getName());
              existingStudent.setEmail(student.getEmail());
